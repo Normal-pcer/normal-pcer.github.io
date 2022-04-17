@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="IE=Edge" />
+        <title>《三体》游戏</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <p>温馨提示：此页面仅供娱乐</p>
+        <h1> ∆ Threebody </h1>
+        <button onclick="newfunc(0)">开始游戏</button>
+        <progress max="100" id="play" value="0"></progress>
+        <script type="text/javascript">
+            function newfunc(n) {
+                if (n==70) {
+                    alert("加载失败！原因：ERR_10086_V_MODE_ONLY")
+                    return
+                }
+                pro = document.getElementById("play")
+                pro.value = n
+                setTimeout("newfunc("+(n+1)+")", Math.random()*20+90);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" />
+    <title>WordCraft</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <ul class="bar">
+        <li><a href="index.html">&lt;</a></li>
+        <li><a href="https://github.com/Normal-pcer/WordCraft">浏览源码</a></li>
+        <li><a href="#" onclick="tipbuilding()">Wiki</a></li>
+    </ul>
+    <p id="tip"></p>
+    <h1>WordCraft是什么？</h1>
+    <p>WordCraft是一款创意来自<a href="https://minecraft.net/">Minecraft</a>的<b>开源</b>游戏。其将Minecraft中的所有元素都抽象成了文字。如“草方块”在Wordcraft中就显示为“草”（这可以在blocksconfig.json中更改）。</p>
+    <p>下面是Wordcraft的一个游戏内截图(Wordcraft v0.2.2, 种子为example)</p>
+    <img src="./images/7e0104df3b873d41d34c77396f3b765853d0314fc320638591c88d87ee4c16c3.png" alt="WordCraft游戏内截图" height="50%" width="50%"/>
+    <p></p>
+    <script type="text/javascript">
+        function tipbuilding() {
+            txt = document.getElementById("tip")
+            if (txt.innerHTML == "")
+                txt.innerHTML = "<a href=\"404.html\">很抱歉，Wordcraft Wiki正在建设中</a>"
+            else 
+                txt.innerHTML = ""
+        }
+    </script>
+</body>
+</html>

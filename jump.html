@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="IE=Edge"/>
+        <title>跳转中</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <script>
+            var request = (function (){
+                var obj = {};
+                var arr = window.location.search.slice(1).split("&");
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    var nv = arr[i].split("=");
+                    obj[decodeURIComponent(nv[0]).toLowerCase()] = decodeURIComponent(nv[1]);
+                }
+                return obj;	
+            })();
+
+            window.location.href = "https://cn.bing.com/search?q="+request.url
+        </script>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+ul.bar {list-style-type: none; margin: auto; background-color: #c12c1f;}
+ul.bar li {display: inline-block; width: 10em; height: 1.5em; margin: auto;}
+ul.bar li a {text-decoration: none; color: #87c0ca; font-size: 1.2em;display: block;}
+ul.bar li a:hover {text-decoration: none; color: #ffee6f; font-size: 1.2em;display: block;}
+body {width: 1080px; margin: auto; background-color: #f8efca;}
