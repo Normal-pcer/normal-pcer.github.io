@@ -5,27 +5,79 @@
     <meta content="IE=edge" />
     <title>WordCraft</title>
     <link rel="stylesheet" href="style.css" />
+    <style type="text/css">
+        ul#browsecodelist li {list-style-type: none;}
+    </style>
 </head>
 <body>
     <ul class="bar">
-        <li><a href="index.html">&lt;</a></li>
-        <li><a href="https://github.com/Normal-pcer/WordCraft">浏览源码</a></li>
-        <li><a href="#" onclick="tipbuilding()">Wiki</a></li>
+        <li><a href="javascript:choosesource()">浏览源代码</a></li>
+        <li><a href="javascript:tipbuilding()">Wiki</a></li>
+        <li><a href="#down">下载游戏</a></li>
+        <li><a href="index.html">&lt;返回</a></li>
     </ul>
     <p id="tip"></p>
+    <ul id="browsecodelist"></ul>
+    <p>WordCraft将在<span id="days"></span>天后(2022年9月19日)发布正式版</p>
     <h1>WordCraft是什么？</h1>
     <p>WordCraft是一款创意来自<a href="https://minecraft.net/">Minecraft</a>的<b>开源</b>游戏。其将Minecraft中的所有元素都抽象成了文字。如“草方块”在Wordcraft中就显示为“草”（这可以在blocksconfig.json中更改）。</p>
     <p>下面是Wordcraft的一个游戏内截图(Wordcraft v0.2.2, 种子为example)</p>
     <img src="./images/7e0104df3b873d41d34c77396f3b765853d0314fc320638591c88d87ee4c16c3.png" alt="WordCraft游戏内截图" height="50%" width="50%"/>
-    <p></p>
+    <h1>现在WordCraft的开发者正在制作什么内容？</h1>
+    <p>以下内容摘录自<a href="https://github.com/Normal-pcer/WordCraft/blob/main/README.md">Readme.md</a></p>
+    <h2 id='正在开发v023'>正在开发：v0.2.3</h2>
+    <ul>
+        <li>添加更多生物</li>
+        <li>初步实现合成系统</li>
+        <li>使玩家可以攻击</li>
+        <li>添加生物的掉落物</li>
+    </ul>
+    <h1 id="down">我该如何游玩WordCraft？</h1>
+    <p>在游玩Wordcraft之前，您需要拥有一个启动器。它将对您的地图和游戏版本进行管理。您可以使用我们的官方启动器或由第三方甚至自己制作的启动器。</p>
+    <p>下面是官方启动器的下载链接。<a href="https://github.com/Normal-pcer/WordCraft/releases/launcher">Releases</a>中有更多版本的启动器，但我们不能保证旧版启动器可以完全兼容所有版本的Wordcraft。</p>
+    <p><a href="https://github.com/Normal-pcer/WordCraft/releases/download/launcher/launcher0.1.1.zip" style="font-size:1.5em;">下载0.1.1版本的启动器</a></p>
     <script type="text/javascript">
         function tipbuilding() {
-            txt = document.getElementById("tip")
+            var txt = document.getElementById("tip")
             if (txt.innerHTML == "")
-                txt.innerHTML = "<a href=\"404.html\">很抱歉，Wordcraft Wiki正在建设中</a>"
+            {
+                txt.innerHTML = "<a href=\"404.html\" style=\"text-decoration: none; color: #000000\">很抱歉，Wordcraft Wiki正在建设中</a>"
+            }
             else 
+            {
                 txt.innerHTML = ""
+            }
         }
+        function choosesource() {
+            var lis = document.getElementById("browsecodelist")
+            if (lis.innerHTML == "")
+            {
+                lis.innerHTML = "<li><a href=\"https://github.com/Normal-pcer/WordCraft\">Github</a></li><li><a href=\"https://gitee.com/exp2009/WordCraft\">Gitee</a></li>"
+            }
+            else
+            {
+                lis.innerHTML = ""
+            }
+
+        }
+        function day() {
+            var date = new Date()
+            var monthdays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            var d = date.getDate()
+            var m = date.getMonth()
+            var tmp0 = 0, tmp1 = 0
+            for (var i=0; i<m; i++) {
+                tmp0 = tmp0 + monthdays[i]
+            }
+            tmp0 = tmp0 + d
+            for (var i=0; i<8; i++) {
+                tmp1 = tmp1 + monthdays[i]
+            }
+            tmp1 = tmp1 + 19
+            var doc = document.getElementById("days")
+            doc.innerHTML = (tmp1 - tmp0)
+        }
+        onload = day()
     </script>
 </body>
 </html>
